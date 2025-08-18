@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        "strict": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "skipLibCheck": true,
+        "target": "ESNext",
+        "module": "NodeNext",
+        "moduleResolution": "nodenext"
+    },
+    "include": [
+        "index.js",
+        "tests/**/*.ts"
+    ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "transtitle",
+  "version": "0.0.1",
+  "description": "Bookmark metadata in titles",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --import 'data:text/javascript,import { register } from \"node:module\"; import { pathToFileURL } from \"node:url\"; register(\"ts-node/esm\", pathToFileURL(\"./\"));' tests/*.test.ts",
+    "check-types": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TransTitle/TransTitle.git"
+  },
+  "keywords": [
+    "bookmarks",
+    "title",
+    "metadata"
+  ],
+  "author": "Peter Lyons Kehl",
+  "license": "BSD-2-Clause OR Apache-2.0 OR MIT",
+  "bugs": {
+    "url": "https://github.com/TransTitle/TransTitle/issues"
+  },
+  "homepage": "https://github.com/TransTitle/TransTitle#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@stylistic/eslint-plugin": "^5.2.2",
+    "eslint": "^9.32.0",
+    "globals": "^16.3.0",
+    "js-beautify": "^1.15.4",
+    "ts-node-test": "^0.4.4",
+    "typescript": "^5.9.2"
+  }
+}
