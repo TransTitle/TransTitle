@@ -17,6 +17,14 @@ const CLOSER_SPACE = ' ';
  */
 const OCCURRENCE_INDICATOR = '@';
 
+class Config {
+    /** @type {boolean}  */
+    extra_asserts = false;
+}
+
+// Global state.
+var config = new Config();
+
 /**
  * @param { object } [options]
  * @param { number } [options.MAX_ENCODED_LENGTH] Use `-1` (default) for unlimited.
@@ -181,7 +189,11 @@ export class Yellow {
     }
     /** @throws {Error} */
     toString() {
-        throw new Error("Don't print/format any instance of class Yellow.");
+        // @TODO factoru out to an "extra_assert" function
+        if (config.extra_asserts) {
+            config.extra_asserts = false;
+            throw new Error("Don't print/format any instance of class Yellow.");
+        }
     }
     /** @type {Yellow} */
     static INSTANCE = new Yellow();
