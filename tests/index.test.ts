@@ -1,7 +1,7 @@
 // Copyright (c) 2025-present TransTitle Contributors. Licensed under MIT license, Apache 2.0
 // license and BSD license.
 
-import * as tt from '../src/index.js';
+import * as tt from '../index.js';
 
 import test from "node:test";
 import assert from "node:assert";
