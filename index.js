@@ -6,7 +6,7 @@
 const TITLE_HIGHLIGHT_SEPARATOR = "#__#";
 const DOUBLE_OPENER = '<<';
 const DOUBLE_CLOSER = '>>';
-const SINGLE_OPENER = '<';
+//const SINGLE_OPENER = '<';
 const SINGLE_CLOSER = '>';
 const CLOSER_SPACE = ' ';
 /**
@@ -15,7 +15,7 @@ const CLOSER_SPACE = ' ';
  * email addresses, social media tags, and usernames, the number sign (#), also known as the hash
  * symbol, is more frequent in general online content.
  */
-const ESCAPER = '@';
+const OCCURRENCE_INDICATOR = '@';
 
 /**
  * @param { object } [options]
@@ -572,7 +572,7 @@ export function parseWholeTitleToEncoded(encodedWhole) {
                         /* the single closer is not escaped: */
                         /* TODO If we escape *after* special characters, then  remove the following
                            check. */
-                        encodedWhole[singleCloserIdx - 1] !== ESCAPER /* @TODO && check that the previous character is not @,  or that it's escaped; and so on leftward,*/ ) {
+                        encodedWhole[singleCloserIdx - 1] !== OCCURRENCE_INDICATOR /* @TODO && check that the previous character is not @,  or that it's escaped; and so on leftward,*/ ) {
                         {
                             // If half of the double closer was truncated, we do NOT want to leave
                             // it as a part of the content. Even if we escaped it, it wouldn't work,
