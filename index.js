@@ -17,13 +17,13 @@ const CLOSER_SPACE = ' ';
  */
 const OCCURRENCE_INDICATOR = '@';
 
-class Config {
+export class Config {
     /** @type {boolean}  */
     extra_asserts = false;
 }
 
-// Global state.
-var config = new Config();
+/** Global configuration. */
+export const config = new Config();
 
 /**
  * @param { object } [options]
@@ -189,7 +189,7 @@ export class Yellow {
     }
     /** @throws {Error} */
     toString() {
-        // @TODO factoru out to an "extra_assert" function
+        // @TODO factor out to an "extra_assert" function
         if (config.extra_asserts) {
             config.extra_asserts = false;
             throw new Error("Don't print/format any instance of class Yellow.");
