@@ -1,7 +1,7 @@
 // @ts-check
 
 // Copyright (c) 2025-present TransTitle Contributors. Licensed under MIT license, Apache 2.0
-// license and BSD license.
+// license and BSD license. https://github.com/TransTitle/TransTitle/
 
 const TITLE_HIGHLIGHT_SEPARATOR = "#__#";
 const DOUBLE_OPENER = '<<';
