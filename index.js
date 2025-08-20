@@ -22,7 +22,7 @@ export class Config {
     extra_asserts = false;
 }
 
-/** Global configuration. */
+/** Global verification/assertion and similar config. */
 export const config = new Config();
 
 /**
