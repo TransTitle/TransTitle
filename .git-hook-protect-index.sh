@@ -9,7 +9,7 @@ if git merge-base --is-ancestor main HEAD; then
         echo "Don't commit changes to index.js on main branch. Use source-only branch first."
         exit 1
     fi
-else
+elif git merge-base --is-ancestor source-only HEAD; then
     # We don't even have .gitignore on source-only branch. So when we switch to it from main branch,
     # let's prevent accidental commit of node_modules or any files from the developer's IDE.
     if git diff --cached --name-only | grep --invert-match -q "^index.js$"; then
