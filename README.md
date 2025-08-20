@@ -33,10 +33,9 @@ checks with [ESLint](eslint.org) (see [`eslint.config.js`](./eslint.config.js)).
   - [`source-only`](https://github.com/TransTitle/TransTitle/tree/source-only) contains `index.js`
     file only. Intended for GIT submodule or GIT subtree.
   - [`main`](https://github.com/TransTitle/TransTitle) also contains tests and documentation.
-- Source code ()`index.js`) is at the top-level (rather than under `src/` or similar).
+- Source code (`index.js`) is at the top-level (rather than under `src/` or similar).
   - That is suitable for GIT submodule or GIT subtree.
-  - Having it at the same location in both branches allows us to easily switch between `main` and
-    `source-only` branches and apply its commits.
+  - Their tags (and commits) hashes are separate, but `index.js` is identical between  (in form `)
 
 ## TODO
 

@@ -18,6 +18,11 @@ keep our pre-commit script on `source-only` branch to keep it slim.) Run the fol
 cp .git-hook-protect-index.sh .git/hooks/pre-commit
 ```
 
+### Pull requests
+
+We only accept pull requests that are rebased on the appropriate branch (`main` or `source-only`,
+see below), and are up-to-date. We do not "merge" pull requests, because it adds GIT history noise.
+
 ### Easier - if you can remove your branch afterwards
 
 This should not be a problem if you've created a dedicated branch for your pull request, based on
