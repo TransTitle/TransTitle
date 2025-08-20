@@ -17,13 +17,25 @@ const CLOSER_SPACE = ' ';
  */
 const OCCURRENCE_INDICATOR = '@';
 
-export class Config {
+export class Flags {
     /** @type {boolean}  */
     extra_asserts = false;
 }
 
 /** Global verification/assertion and similar config. */
-export const config = new Config();
+export const flags = new Flags();
+
+/**
+ * @param {boolean} value Expected to be true.
+ * @param {string|object} message String (or an object with `toString()`) to put in the error if
+ * `value` is false.
+ * @throws {Error} if `value` is false
+ */
+function extra_assert(value, message) {
+    if (!value) {
+        throw new Error(message.toString());
+    }
+}
 
 /**
  * @param { object } [options]
@@ -190,8 +202,8 @@ export class Yellow {
     /** @throws {Error} */
     toString() {
         // @TODO factor out to an "extra_assert" function
-        if (config.extra_asserts) {
-            config.extra_asserts = false;
+        if (flags.extra_asserts) {
+            flags.extra_asserts = false;
             throw new Error("Don't print/format any instance of class Yellow.");
         }
     }
