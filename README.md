@@ -1,11 +1,13 @@
 # TransTitle
 
-[TransTitle](https://github.com/TransTitle/TransTitle/) 
+[TransTitle](https://github.com/TransTitle/TransTitle/) . It's based on
+[ldenoue/yawas](https://github.com/ldenoue/yawas/).
 
 ## Implementation
 
-TransTitle is written in pure Javascript, but with [JSDoc](https://jsdoc.app/) type annotations.
-That eliminates a need for any extra processing, so it can be used directly in browser extensions.
+TransTitle is written in pure Javascript, with extra [JSDoc](https://jsdoc.app/) type annotations.
+That eliminates a need for any additional processing, so it can be used directly in browser
+extensions.
 
 ### Data organization
 
@@ -23,7 +25,7 @@ Of course, we validate JSDoc-annotated types. But, we also enforce extra standar
 checks with [ESLint](eslint.org) (see [`eslint.config.js`](./eslint.config.js)).
 
 - `npm install`
-- `npm run check-types` - **before** `npm test`, as it reports type errors better
+- `npm run check-types`
 - `npx eslint`
 - `npm test`
 
@@ -35,7 +37,9 @@ checks with [ESLint](eslint.org) (see [`eslint.config.js`](./eslint.config.js)).
   - [`main`](https://github.com/TransTitle/TransTitle) also contains tests and documentation.
 - Source code (`index.js`) is at the top-level (rather than under `src/` or similar).
   - That is suitable for GIT submodule or GIT subtree.
-  - Their tags (and commits) hashes are separate, but `index.js` is identical between  (in form `)
+  - Their tags (and commit hashes) are separate, but the content of `index.js` is identical between
+    related tags on both `main` and `source-only`. (Tags on `main` are in form `v1.0.0`, and on
+    `source-only` in form `v1.0.0-source-only`.)
 
 ## TODO
 

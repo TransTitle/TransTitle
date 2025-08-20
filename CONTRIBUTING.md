@@ -10,10 +10,11 @@
 Commit changes to `index.js` only on a `source-only`-based branch. Changes to any other files on a
 `main`-based branch.
 
-After you clone the repository, set up a pre-commit hook. (We do **not** use
-[pre-commit/pre-commit](https://github.com/pre-commit/pre-commit) or use a symlink, because we don't
-keep our pre-commit script on `source-only` branch to keep it slim.) Run the following on a
-`main`-based branch:
+After you clone the repository, set up a [pre-commit
+hook](https://github.com/TransTitle/TransTitle/blob/main/.git-hook-protect-index.sh). (We do **not**
+use [pre-commit/pre-commit](https://github.com/pre-commit/pre-commit) nor we use a symlink, because
+we don't keep our pre-commit script on `source-only` branch, in order to keep it slim.) Run the
+following on a `main`-based branch:
 ```bash
 cp .git-hook-protect-index.sh .git/hooks/pre-commit
 ```
@@ -112,7 +113,14 @@ git cherry-pick user-other-files-commit
 git push upstream
 ```
 
-### Code formatting
+### Maintainer
+
+Do not merge or rebase commits from `source-only` to `main`. That would rebase `main`-only commits, which would mean any forks/clones would have to force pull.
+
+Instead, `git cherry-pick` from `source-only` to `main`. That does create a different commit hash on
+`main` - so be it.
+
+## Code formatting
 
 - Wrapping lines to 100 characters (inspired by Rust).
 - Suggest [ReWrap Revived](https://marketplace.visualstudio.com/items?itemName=dnut.rewrap-revived)
