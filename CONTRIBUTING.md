@@ -5,6 +5,24 @@
 - Use JSDoc.
 - Write tests. In TypeScript.
 
+## Code formatting
+
+- Wrapping lines to 100 characters (inspired by Rust).
+- Suggest [ReWrap Revived](https://marketplace.visualstudio.com/items?itemName=dnut.rewrap-revived)
+  ([dnut/Rewrap](https://github.com/dnut/Rewrap/)).
+- Please upvote [dnut/Rewrap/issues/32](https://github.com/dnut/Rewrap/issues/32) ("Breaking
+  backticked string literals containing a space").
+- We use [js-beautify](https://github.com/beautifier/js-beautify)
+  ([beautifier.io](https://beautifier.io/)), because it's less opinionated/more configurable than
+  [prettier.io](https://prettier.io/).
+  - Our only extra configuration (on top of defaults) is to keep an empty line at the end of files.
+    (In addition to it being needed by some tools, this simplifies GIT diffs when adding content to
+    the end of a file.)
+  - ```bash
+    npx js-beautify -r index.js
+    npx js-beautify -r tests/*
+    ```
+
 ## GIT and pull requests
 
 Commit changes to `index.js` only on a `source-only`-based branch. Changes to any other files on a
@@ -23,6 +41,8 @@ cp .git-hook-protect-index.sh .git/hooks/pre-commit
 
 We only accept pull requests that are rebased on the appropriate branch (`main` or `source-only`,
 see below), and are up-to-date. We do not "merge" pull requests, because it adds GIT history noise.
+
+If commits are fixing any issues, have the issue number with `#` prefix in the commit message.
 
 ### Easier - if you can remove your branch afterwards
 
@@ -119,24 +139,6 @@ Do not merge or rebase commits from `source-only` to `main`. That would rebase `
 
 Instead, `git cherry-pick` from `source-only` to `main`. That does create a different commit hash on
 `main` - so be it.
-
-## Code formatting
-
-- Wrapping lines to 100 characters (inspired by Rust).
-- Suggest [ReWrap Revived](https://marketplace.visualstudio.com/items?itemName=dnut.rewrap-revived)
-  ([dnut/Rewrap](https://github.com/dnut/Rewrap/)).
-- Please upvote [dnut/Rewrap/issues/32](https://github.com/dnut/Rewrap/issues/32) ("Breaking
-  backticked string literals containing a space").
-- We use [js-beautify](https://github.com/beautifier/js-beautify)
-  ([beautifier.io](https://beautifier.io/)), because it's less opinionated/more configurable than
-  [prettier.io](https://prettier.io/).
-  - Our only extra configuration (on top of defaults) is to keep an empty line at the end of files.
-    (In addition to it being needed by some tools, this improves GIT diffs when adding content to
-    the end of a file.)
-  - ```
-    npx js-beautify -r index.js
-    npx js-beautify -r tests/*
-    ```
 
 ## Other than technical
 ### International (American) English
