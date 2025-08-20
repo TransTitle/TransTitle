@@ -5,18 +5,18 @@
 - Use JSDoc.
 - Write tests. In TypeScript.
 
-## Directories and Branches
+## GIT and pull requests
 
-- Two GIT branches:
-  - [`source-only`](https://github.com/TransTitle/TransTitle/tree/source-only) contains `index.js`
-    file only. Intended for GIT submodule or GIT subtree.
-  - [`main`](https://github.com/TransTitle/TransTitle) also contains tests and documentation.
-- Source code ()`index.js`) is at the top-level (rather than under `src/` or similar).
-  - That is suitable for GIT submodule or GIT subtree.
-  - Having it at the same location in both branches allows us to easily switch between `main` and
-    `source-only` branches and apply its commits.
+Commit changes to `index.js` only on a `source-only`-based branch. Changes to any other files on a
+`main`-based branch.
 
-## Pull Requests
+After you clone the repository, set up a pre-commit hook. (We do **not** use
+[pre-commit/pre-commit](https://github.com/pre-commit/pre-commit) or use a symlink, because we don't
+keep our pre-commit script on `source-only` branch to keep it slim.) Run the following on a
+`main`-based branch:
+```bash
+cp .git-hook-protect-index.sh .git/hooks/pre-commit
+```
 
 ### Easier - if you can remove your branch afterwards
 

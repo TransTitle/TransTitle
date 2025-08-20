@@ -13,7 +13,7 @@ Redundant
 
 Potential for consistency problems
 
-### Code quality: Tests, Type Checks
+### Code quality: Tests, type checks
 
 Tests are written in TypeScript and run with
 [ts-node-test](https://www.npmjs.com/package/ts-node-test). Running tests requires Node.js version
@@ -26,6 +26,17 @@ checks with [ESLint](eslint.org) (see [`eslint.config.js`](./eslint.config.js)).
 - `npm run check-types` - **before** `npm test`, as it reports type errors better
 - `npx eslint`
 - `npm test`
+
+## GIT branches and source code location
+
+- Two GIT branches:
+  - [`source-only`](https://github.com/TransTitle/TransTitle/tree/source-only) contains `index.js`
+    file only. Intended for GIT submodule or GIT subtree.
+  - [`main`](https://github.com/TransTitle/TransTitle) also contains tests and documentation.
+- Source code ()`index.js`) is at the top-level (rather than under `src/` or similar).
+  - That is suitable for GIT submodule or GIT subtree.
+  - Having it at the same location in both branches allows us to easily switch between `main` and
+    `source-only` branches and apply its commits.
 
 ## TODO
 
