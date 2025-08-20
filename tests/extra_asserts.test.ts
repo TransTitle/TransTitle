@@ -8,7 +8,7 @@ import assert from "node:assert";
 
 tt.flags.extra_asserts = true;
 
-test("Yellow.toString() fails an extra assert", () => {
+test("Yellow.toString() throws when flags.extra_asserts==true", () => {
     var encodedWhole;
     assert.throws(
         () => {
