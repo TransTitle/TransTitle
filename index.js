@@ -3,6 +3,8 @@
 // Copyright (c) 2025-present TransTitle Contributors. Licensed under MIT license, Apache 2.0
 // license and BSD license. https://github.com/TransTitle/TransTitle/
 
+"use strict"; // Not needed with NPM or TypeScript. But useful for older codebases.
+
 const TITLE_HIGHLIGHT_SEPARATOR = "#__#";
 const DOUBLE_OPENER = '<<';
 const DOUBLE_CLOSER = '>>';
@@ -17,13 +19,14 @@ const CLOSER_SPACE = ' ';
  */
 const OCCURRENCE_INDICATOR = '@';
 
-export class Flags {
-    /** @type {boolean}  */
-    extra_asserts = false;
-}
-
-/** Global verification/assertion and similar config. */
-export const flags = new Flags();
+/**
+ * Global verification/assertion and similar config.
+ * @namespace
+ * @property {boolean} extra_asserts
+ */
+export const flags = {
+    extra_asserts: false
+};
 
 /**
  * @param {boolean} value Expected to be true.
